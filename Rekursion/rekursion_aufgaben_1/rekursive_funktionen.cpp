@@ -1,6 +1,5 @@
 #include "rekursive_funktionen.h"
 #include "konsolenausgabe.h"
-
 #include <iostream>
 
 int fibonacci(int eingabe);

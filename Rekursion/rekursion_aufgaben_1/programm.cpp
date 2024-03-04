@@ -1,8 +1,5 @@
 #include "rekursive_funktionen.h"
 
-
-using namespace std;
-
 int main() {
 
 	fakultaetVon(5);

@@ -1,5 +1,4 @@
 #include "konsolenausgabe.h"
-
 #include <iostream>
 
 void aufrufAusgabe(std::string funktionsname, unsigned long eingabe) {
