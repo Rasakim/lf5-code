@@ -1,10 +1,10 @@
 #pragma once
 #include <iostream>
 
-void aufrufAusgabe(std::string funktionsname, unsigned long eingabe);
+void aufrufDrucken(std::string funktionsname, unsigned long eingabe);
 
-void aufrufAusgabe(std::string funktionsname, unsigned long m, unsigned long n);
+void aufrufDrucken(std::string funktionsname, unsigned long m, unsigned long n);
 
-void rueckgabeAusgabe(std::string funktionsname, unsigned long m, unsigned long n);
+void rueckgabeDrucken(std::string funktionsname, unsigned long m, unsigned long n);
 
-void rueckgabeAusgabe(std::string funktionsname, unsigned long m, unsigned long n, unsigned long ergebnis);
+void rueckgabeDrucken(std::string funktionsname, unsigned long m, unsigned long n, unsigned long ergebnis);
