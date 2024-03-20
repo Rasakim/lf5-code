@@ -1,50 +1,85 @@
+#include "ArrayFunktionen.h"
+#include "MenuFunktionen.h"
 #include <iostream>
-#include <ctime>
 
 using namespace std;
 
-int main()
-{
-    const int arrayGroesse = 10;
+int main() {
 
-    int meinArray[arrayGroesse];
-    
-    // Seed fuer die rand()-Funktion festlegen
-    srand((unsigned) time(NULL));
+	const int arrayGroesse = 5;
 
-    // 1. Fuellen des Arrays mit zufaelligen Zahlen
-    for (int index = 0; index < arrayGroesse; index++) {
+	int meinArray[arrayGroesse];
 
-        int zufallszahl = rand();
+	int auswahl;
 
-        meinArray[index] = zufallszahl;
+	bool laeuftFuellMenu = true;
 
-        cout << "Array an Stelle = " << index << " gefuellt mit Wert = " << zufallszahl << endl;
 
-    }
+	while (laeuftFuellMenu) {
 
-    // 2. Groesstes Element im Array finden
-    // Annahme maxiumum: das erste Element im Array ist das aktuelle Maximum
-    // Annahme minimum: das erste Element im Array ist das aktuelle Minimum
-    int maximum = meinArray[0];
-    int minimum = meinArray[0];
+		auswahl = nachFuellmethodeFragen(arrayGroesse);
 
-    for (int index = 1; index < arrayGroesse; index++) {
+		switch (auswahl) {
+		case 1:
+			arrayMitZufallszahlenFuellen(meinArray, arrayGroesse);
+			break;
+		case 2:
+			arrayPerHandFuellen(meinArray, arrayGroesse);
+			break;
+		case 999:
+			return 0;
+			break;
+		default:
+			cout << "Inkorrekte Eingabe" << endl;
+			break;
+		}
 
-        if (meinArray[index] > maximum) {
-            maximum = meinArray[index];
-        }
 
-        if (meinArray[index] < minimum) {
-            minimum = meinArray[index];
-        }
+		bool laeuftFunktionsMenu = true;
 
-    }
+		while (laeuftFunktionsMenu) {
 
-    // Maximum & Minimum ausgeben
-    cout << "Groesster Wert im Array: " << maximum << endl;
-    cout << "Kleinster Wert im Array: " << minimum << endl;
+			auswahl = nachFunktionFragen();
 
-    return 0;
+			switch (auswahl) {
+			case 1:
+				cout << "Minimum: " << minimumBestimmen(meinArray, arrayGroesse) << endl;
+				break;
+			case 2:
+				cout << "Maximum: " << maximumBestimmen(meinArray, arrayGroesse) << endl;
+				break;
+			case 3:
+				cout << "Median: " << medianBestimmen(meinArray, arrayGroesse) << endl;
+				break;
+			case 4:
+				cout << "Spannweite: " << spannweiteBestimmen(meinArray, arrayGroesse) << endl;
+				break;
+			case 5:
+				cout << "Mittlere Abweichung: " << mittlereAbweichungBestimmen(meinArray, arrayGroesse) << endl;
+				break;
+			case 6:
+				//TODO - haeufigkeitenBestimmen
+				break;
+			case 7:
+				arrayAusgeben(meinArray, arrayGroesse);
+				break;
+			case 8:
+				arrayAufsteigendSortieren(meinArray, arrayGroesse);
+				arrayAusgeben(meinArray, arrayGroesse);
+				break;
+			case 99:
+				laeuftFunktionsMenu = false;
+				break;
+			case 999:
+				return 0;
+			default:
+				cout << "Auswahl inkorrekt" << endl;
+				break;
+			}
+
+			system("PAUSE");
+
+		}
+	}
 }
 
