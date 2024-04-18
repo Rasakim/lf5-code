@@ -3,17 +3,24 @@
 
 using namespace std;
 
-int nachFuellmethodeFragen(int arrayGroesse) {
+int nachFuellmethodeFragen(int arrayGroesse, int moduloZahl) {
 
 	int auswahl;
 
 	system("CLS");
-	cout << "==> Array fuellen <==" << endl;
+
+	cout << "==> Array fuellen <==" << endl << endl;
+
 	cout << "Gewaehlte Array Groesse = " << arrayGroesse << endl;
-	cout << endl << "Bitte auswaehlen: " << endl;
+	cout << "Modulo Zahl = " << moduloZahl << endl << endl;
+
+	cout << "Bitte auswaehlen: " << endl << endl;
+
 	cout << "1) Array mit Zufallszahlen fuellen" << endl;
-	cout << "2) Array per Hand fuellen" << endl;
-	cout << "999) Programm beenden" << endl;
+	cout << "2) Array per Hand fuellen" << endl << endl;
+
+	cout << "999) Programm beenden" << endl << endl;
+
 	cout << "Einagabe: ";
 	cin >> auswahl;
 	cout << endl;
@@ -27,18 +34,22 @@ int nachFunktionFragen() {
 
 	system("CLS");
 
-	cout << "==> Funktionen <==" << endl;
-	cout << endl << "Bitte auswaehlen: " << endl;
-	cout << "1) minimumBestimmen" << endl;
-	cout << "2) maximumBestimmen" << endl;
-	cout << "3) medianBestimmen" << endl;
-	cout << "4) spannweiteBestimmen" << endl;
-	cout << "5) mittlereAbweichungBestimmen" << endl;
-	cout << "6) haeufigkeitenBestimmen" << endl;
-	cout << "7) array ausgeben" << endl;
-	cout << "8) array sortieren" << endl;
-	cout << "99 neue Zahlen eingeben" << endl;
-	cout << "999) beenden" << endl;
+	cout << "==> Funktionen <==" << endl << endl;
+
+	cout << "Bitte auswaehlen: " << endl << endl;
+
+	cout << "1) Minimum bestimmen" << endl;
+	cout << "2) Maximum bestimmen" << endl;
+	cout << "3) Median bestimmen" << endl;
+	cout << "4) spannweite bestimmen" << endl;
+	cout << "5) MittlereAbweichung bestimmen" << endl;
+	cout << "6) Haeufigkeiten bestimmen" << endl;
+	cout << "7) Array sortieren" << endl;
+	cout << "8) Array ausgeben" << endl << endl;
+
+	cout << "99) Neue Zahlen eingeben" << endl;
+	cout << "999) Programm beenden" << endl << endl;
+
 	cout << "Einagabe: ";
 	cin >> auswahl;
 	cout << endl;

@@ -6,22 +6,20 @@ using namespace std;
 
 int main() {
 
-	const int arrayGroesse = 5;
-
+	const int arrayGroesse = 10;
+	const int moduloZahl = 1000;
 	int meinArray[arrayGroesse];
 
 	int auswahl;
-
 	bool laeuftFuellMenu = true;
-
 
 	while (laeuftFuellMenu) {
 
-		auswahl = nachFuellmethodeFragen(arrayGroesse);
+		auswahl = nachFuellmethodeFragen(arrayGroesse, moduloZahl);
 
 		switch (auswahl) {
 		case 1:
-			arrayMitZufallszahlenFuellen(meinArray, arrayGroesse);
+			arrayMitZufallszahlenFuellen(meinArray, arrayGroesse, moduloZahl);
 			break;
 		case 2:
 			arrayPerHandFuellen(meinArray, arrayGroesse);
@@ -58,13 +56,13 @@ int main() {
 				cout << "Mittlere Abweichung: " << mittlereAbweichungBestimmen(meinArray, arrayGroesse) << endl;
 				break;
 			case 6:
-				//TODO - haeufigkeitenBestimmen
+				haeufigkeitenBestimmen(meinArray, arrayGroesse);
 				break;
 			case 7:
+				arrayAufsteigendSortieren(meinArray, arrayGroesse);
 				arrayAusgeben(meinArray, arrayGroesse);
 				break;
 			case 8:
-				arrayAufsteigendSortieren(meinArray, arrayGroesse);
 				arrayAusgeben(meinArray, arrayGroesse);
 				break;
 			case 99:
@@ -73,7 +71,7 @@ int main() {
 			case 999:
 				return 0;
 			default:
-				cout << "Auswahl inkorrekt" << endl;
+				cout << "Inkorrekte Eingabe" << endl;
 				break;
 			}
 

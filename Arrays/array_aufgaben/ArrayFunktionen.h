@@ -2,7 +2,7 @@
 
 void arrayAusgeben(int meinArray[], int arrayGroesse);
 
-void arrayMitZufallszahlenFuellen(int meinArray[], int arrayGroesse);
+void arrayMitZufallszahlenFuellen(int meinArray[], int arrayGroesse, int moduloZahl);
 
 void arrayPerHandFuellen(int meinArray[], int arrayGroesse);
 
